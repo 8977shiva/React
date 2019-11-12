@@ -1,15 +1,23 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      monster: [{name:'frankenstein',id:'1'},{name:'dracula', id:'2'},{name:'Zombie', id:'3'}]
-    };
-  }
+      monster:[]    };
 
+  }
+ //life cycle method
+  componentDidMount(){
+    // to get the json
+     fetch(" https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(users => this.setState({monster:users}));
+
+
+  }
   render() {
     return (
       <div className="App">
