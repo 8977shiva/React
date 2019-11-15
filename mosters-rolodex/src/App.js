@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      monster:[]    };
+      monsters:[]    };
 
   }
  //life cycle method
@@ -15,15 +15,15 @@ class App extends Component {
     // to get the json
      fetch(" https://jsonplaceholder.typicode.com/users")
       .then(response => response.json())
-      .then(users => this.setState({monster:users}));
+      .then(users => this.setState({monsters :users}));
 
 
   }
   render() {
     return (
       <div className="App">
-         <CardList monster={this.state.monster} >  {
-        }</CardList >
+         <CardList monsters={this.state.monsters}/>     
+          
       
       </div>
     );
