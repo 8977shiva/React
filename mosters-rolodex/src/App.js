@@ -2,7 +2,7 @@ import React, { Component } from "react";
 //import logo from "./logo.svg";
 import "./App.css";
 import {CardList } from './components/card-list/card-list.Component'
-
+import  { SearchBox} from './components/search-box/search-box'
 class App extends Component {
   constructor() {
     super();
@@ -22,15 +22,17 @@ class App extends Component {
 
   }
   render() {
-    return (
+    const {monsters, searchField} =this.state;
+     const filterMonsters=monsters.filter(monster=> monster.name.toLowerCase().includes(searchField.toLocaleLowerCase())) ; 
+       return (
       <div className="App">
-        <input type='search'  placeholder='search'  
-         onChange={e=>this.setState({searchField:e.target.value})} />
-         <CardList monsters={this.state.monsters}/>     
-          
-      
-      </div>
-    );
+      <SearchBox  placeholder="monster" handelChange={e=>{
+        this.setState({searchField:e.target.value});
+        
+      }}/>
+         <CardList monsters={filterMonsters}/>     
+            </div>
+    );    
   }
 }
 
