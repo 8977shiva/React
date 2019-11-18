@@ -26,7 +26,8 @@ class App extends Component {
      const filterMonsters=monsters.filter(monster=> monster.name.toLowerCase().includes(searchField.toLocaleLowerCase())) ; 
        return (
       <div className="App">
-      <SearchBox  placeholder="monster" handelChange={e=>{
+        <h1> Cats</h1>
+      <SearchBox  placeholder="monster" handelChangev={e=>{
         this.setState({searchField:e.target.value});
         
       }}/>
