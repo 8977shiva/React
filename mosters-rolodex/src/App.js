@@ -27,7 +27,7 @@ class App extends Component {
        return (
       <div className="App">
         <h1> Cats</h1>
-      <SearchBox  placeholder="monster" handelChangev={e=>{
+      <SearchBox  placeholder="cats" handelChange={e=>{
         this.setState({searchField:e.target.value});
         
       }}/>
